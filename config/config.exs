@@ -18,7 +18,7 @@ if Mix.env() == :dev do
 end
 
 if Mix.env() == :test do
-  config :ash_postgres, AshPostgres.TestRepo, log: false
+  config :ash_postgres, AshPostgres.TestRepo, log: :debug
   config :ash_postgres, AshPostgres.TestNoSandboxRepo, log: false
 
   config :ash, :validate_domain_resource_inclusion?, false
@@ -67,5 +67,5 @@ if Mix.env() == :test do
     {Ash.Type.String, Ash.Type.UUID}
   ]
 
-  config :logger, level: :warning
+  config :logger, level: :debug
 end
